@@ -138,7 +138,6 @@
                                 <br>
                                 <label class="letra">Sexo </label>
                                 <select name="sexo" class="btn btn-primary" >
-                                    <option disabled selected="">Seleccione su Sexo</option>
                                     <option value="1">Hombre</option>
                                     <option value="2">Mujer</option>
                                 </select>
@@ -531,13 +530,12 @@
                                 <input class="btn btn-primary"  type="time" id="hora" name="dormir" > 
                                 <br>
                                 <label class="letra">Actividad Física </label>
-                                <select class="btn btn-primary" >
-                                                    <option disabled selected="">¿cuanto tiempo de actividad fisica haces?</option>
-                                                    <option>Ninguna</option>
-                                                    <option>30 min</option>
-                                                    <option>enpe 30 y 1 hora</option>
-                                                    <option>enpe 1 hora y 3</option>
-                                                    <option>mas de 3 horas</option>
+                                <select class="btn btn-primary" name="actFisica">
+                                                    <option value="0">Ninguna</option>
+                                                    <option value="30">30 min</option>
+                                                    <option value="50">30min - 1 hora</option>
+                                                    <option value="120">1hr - 3hrs</option>
+                                                    <option value="180">3hrs - ...</option>
                                 </select>
                                 <a href="/login"><p align="right"><input name="action" class="btn btn-primary btn-rounded" id="boton" type="submit" onclick="" value="Registrarse"></p></a>
                                 </form>

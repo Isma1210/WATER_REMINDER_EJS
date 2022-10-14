@@ -61,6 +61,11 @@ body {
   background-color: #fff;
 }
 
+.regAgua{
+  position: relative;
+  margin-top: 0rem;
+}
+
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
@@ -11794,13 +11799,12 @@ pre .code {
     display: none !important;
   }
   #animacion{
-    position: absolute;
+    position: relative;
     width: 300px;
     height: 200px;
     z-index: 15;
     top: 40%;
     left: 60%;
-    margin: -100px 0 0 -120px;
   }
 }
 
@@ -11955,17 +11959,6 @@ margin:auto;
 .info{
   padding-left: 8px;
   width: 13rem;
-}
-
-
-#animacion{
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  z-index: 15;
-  top: 35%;
-  left: 55%;
-  margin: -100px 0 0 -150px;
 }
 
 #config1 , #config2 , #config3 , #config4{

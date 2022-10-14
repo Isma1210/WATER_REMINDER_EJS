@@ -91,14 +91,37 @@ app.post('/registrarse',async(req,res)=>{
     const nombre=req.body.name;
     const user=req.body.correo;
     const password=req.body.pass;
+    const peso=req.body.peso;
+    const altura=req.body.altura;
+    const edad=req.body.edad;
+    const meta_agua='2300';
+    const hora_desp=req.body.despertar;
+    const hora_dormir=req.body.dormir;
+    const taza=0;
+    const Actividad_fisica=req.body.actFisica;
+    const sexo=req.body.sexo;
+    const privilegio=1;
+
     connection.query('INSERT INTO usuario SET ?',{Usuario:nombre,Password:password,email:user,Sesion:0},async(error,results)=>{
         if (error) {
             console.log(error);
         }else{
             console.log('Usuario Registrado con exito')
+            // res.redirect('/login')
+        }
+
+    })
+    
+
+    connection.query('INSERT INTO persona SET ?',{peso:peso,altura:altura,edad:edad,meta_agua:meta_agua,hora_desp:hora_desp,hora_dormir:hora_dormir,tasa:taza,Actividad_fisica:parseInt(Actividad_fisica),Sexo_idsexo:parseInt(sexo),Privilegio_idPrivilegio:parseInt(privilegio),Usuario_idUsuario:4},async(error,results)=>{
+        if (error) {
+            console.log(error);
+        }else{
+            console.log('Persona Registrada con exito')
             res.redirect('/login')
         }
     })
+
 })
 
 //BACK DE LOGIN

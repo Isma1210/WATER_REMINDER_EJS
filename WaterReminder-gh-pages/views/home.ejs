@@ -57,26 +57,27 @@
                             <h1 align="center"><font color="#F2D049">Objetivo de agua de </font></h1>
                             <h1 align="center">1200mL</h1>
                             <br>
-                            <h3 align="center" id="agrConsumo">Agregar Consumo </h3>
-                            <div id="animacion" >
+                            <div id="animacion">
                                 <img src="resources/agua.gif" class="border" height="200px" width="200px"> 
                             </div>
-                            <form name="confirmarconsumo" action="/addWater" method="post">
-                                <h3 align="center">
-                                    <select name="taza" id="">
-                                        <option value="200">200mL</option>
-                                        <option value="400">400mL</option>
-                                        <option value="500">500mL</option>
-                                        <option value="600">600mL</option>
-                                        <option value="800">800mL</option>
-                                        <option value="1000">1000mL</option>
-                                        <option value="1500">1500mL</option>
-                                    </select>
-                                </h3>
-                                <div align="center" id="confirmarconsumo" > 
-                                    <button class="btn btn-primary" type="submit">Confirmar consumo</button>
-                                </div>
-                            </form>
+                            <div class="regAgua">
+                                <form name="confirmarconsumo" action="/addWater" method="post">
+                                    <h3 align="center">
+                                        <select name="taza" id="">
+                                            <option value="200">200mL</option>
+                                            <option value="400">400mL</option>
+                                            <option value="500">500mL</option>
+                                            <option value="600">600mL</option>
+                                            <option value="800">800mL</option>
+                                            <option value="1000">1000mL</option>
+                                            <option value="1500">1500mL</option>
+                                        </select>
+                                    </h3>
+                                    <div align="center" id="confirmarconsumo" > 
+                                        <button class="btn btn-primary" type="submit">Confirmar consumo</button>
+                                    </div>
+                                </form>
+                            </div>
                             <form name="cambiartaza" action="">
                             <div align="center" id="cambiartaza">
                                 <a href="/tazas">
