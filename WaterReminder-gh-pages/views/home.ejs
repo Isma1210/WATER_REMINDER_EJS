@@ -23,7 +23,7 @@
 
     <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <a href="home.html" class="navbar-brand" ><img src="resources/assets/imgs/plantita.png   " alt="" class="brand-img"></a>
+            <a href="/home" class="navbar-brand" ><img src="resources/assets/imgs/plantita.png   " alt="" class="brand-img"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,21 +54,33 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1 align="center"><font color="#F2D049">  Objetivo de agua</font></h1>
+                            <h1 align="center"><font color="#F2D049">Objetivo de agua de </font></h1>
                             <h1 align="center"><%=msg%></h1>
                             <br>
-                            <h3 align="center">Agregar: 400ml</h3>
+                            <h3 align="center">Agregar: </h3>
+                            <h3 align="center">
+                                <select name="cantAgua" id="">
+                                    <option value="200">200mL</option>
+                                    <option value="400">400mL</option>
+                                    <option value="500">500mL</option>
+                                    <option value="600">600mL</option>
+                                    <option value="800">800mL</option>
+                                    <option value="1000">1000mL</option>
+                                    <option value="1500">1500mL</option>
+                                </select>
+                            </h3>
+                            <br><br><br><br><br><br><br><br><br><br>
                             <div id="animacion" >
                                 <table>
                                     <tr>
                                         <td >
-                                            <h2>
+                                            <h1>
                                                 <img src="resources/agua.gif" class="border" height="200px" width="200px">
-                                            </h2>
+                                            </h1>
                                     </tr>
                                 </table>
                             </div>
-                            <br><br><br><br><br><br><br><br><br><br>
+                            <br><br><br><br>
                             <form name="confirmarconsumo" action="">
                                 <div align="center" id="confirmarconsumo" > 
                                     <button class="btn btn-primary">Confirmar consumo</button>

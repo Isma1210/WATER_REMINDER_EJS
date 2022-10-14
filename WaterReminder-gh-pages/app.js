@@ -32,12 +32,19 @@ const connection=require('./database/db');
 
 //ESTABLECIENDO RUTAS
 
-app.get('/',(req,res)=>{
+// app.get('/',(req,res)=>{
+//     res.render('index')
+// })
+
+app.get('/index',(req,res)=>{
     res.render('index')
 })
 
 app.get('/home',(req,res)=>{
     res.render('home',{msg:'1200mL'})
+    req.session.usuario='Isma',
+    req.session.visitas=req.session.visitas ? ++req.session.visitas:1;
+    console.log(req.session);
 })
 
 app.get('/registrarse',(req,res)=>{
@@ -80,14 +87,14 @@ app.post('/registrarse',async(req,res)=>{
     connection.query('INSERT INTO usuario SET ?',{Usuario:nombre,Password:password,email:user,Sesion:0},async(error,results)=>{
         if (error) {
             console.log(error);
-        }res.send(`
-        <a href="/login">Back</a>
-        <br>
-        <h1>Registro de ${nombre} exitoso</h1>`)
+        }else{
+            console.log('Usuario Registrado con exito')
+            res.redirect('/login')
+        }
     })
 })
 
-//LOGIN
+//BACK DE LOGIN
 app.post('/auth',async(req,res)=>{
     const Usuario=req.body.usuario;
     const Password=req.body.pass;
@@ -116,8 +123,35 @@ app.post('/auth',async(req,res)=>{
         })
     }
 
+    req.session.loggedin=true;
 
 
+
+})
+
+//CONFIRMAR SESIONES
+app.get('/',(req,res)=>{
+    if(req.session.loggedin){
+        console.log('Sesion creada')
+        res.render('/configuracion',{
+            login:true,
+            name:req.session.Usuario
+        })
+    }else{
+        console.log('NO hay sesion activa')
+        res.render('index',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
+})
+
+//CERRAR SESION
+app.get('/logout',(req,res)=>{
+    req.session.destroy(()=>{
+        console.log('Sesion cerrada')
+        res.redirect('/')
+    })
 })
 
 
