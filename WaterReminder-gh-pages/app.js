@@ -42,7 +42,8 @@ app.get('/index',(req,res)=>{
 
 app.get('/home',(req,res)=>{
 
-    connection.query('SELECT*FROM consumo_agua',(error,results)=>{
+    //connection.query('SELECT*FROM consumo_agua',(error,results)=>{
+    connection.query('SELECT*FROM prueba',(error,results)=>{
         if(error)throw error;
         res.render('home',{consumo:results})
     })
@@ -166,11 +167,17 @@ app.get('/logout',(req,res)=>{
 app.post('/addWater',(req,res)=>{
     const cantidad=req.body.taza;
                     // INSERT INTO consumo_agua(Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida, datos_bebida_CTipo_bebida_idCTipo_bebida)  VALUES
-    connection.query('INSERT INTO consumo_agua(Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida, datos_bebida_CTipo_bebida_idCTipo_bebida)  VALUES ("'+parseInt(cantidad)+'",2,1,1);',(err,respuesta,fields)=>{
+    // connection.query('INSERT INTO consumo_agua(Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida, datos_bebida_CTipo_bebida_idCTipo_bebida)  VALUES ("'+parseInt(cantidad)+'",2,1,1);',(err,respuesta,fields)=>{
 
+    //     if (err)return console.log("Error",err)
+    //     return res.sendFile(path.resolve(__dirname,'public/home.html'))
+    // })
+
+    connection.query('INSERT INTO prueba VALUES ("'+parseInt(cantidad)+'");',(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
-        return res.sendFile(path.resolve(__dirname,'public/home.html'))
+        return res.redirect('/home');
     })
+
 })
 
 
