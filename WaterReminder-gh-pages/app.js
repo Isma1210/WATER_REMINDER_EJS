@@ -94,19 +94,24 @@ app.post('/auth',async(req,res)=>{
     console.log(Usuario)
     if (Usuario&&Password) {
         console.log(`El usuario: ${Usuario} y la contra: ${Password}`)
+        
+        connection.query('SELECT email FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
+            if(respuesta[0].email===Usuario){
+                console.log('Usuario existente')
+            }else{
+                res.redirect('/')
+                console.log('Usuario inexistente')
+            }
+        })
+        
         connection.query('SELECT Password FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
-            console.log(respuesta);
-           
-
+            
             if(respuesta[0].Password===Password){
-                // res.send(`<a href="/home">Ingresar</a>
-                // <h1>INGRESO EXITOSO</h1>
-                // `)
                 console.log('Ingreso exitoso al sistema')
                 res.redirect('/home')
             }else{
-                console.log(respuesta[0].Password)
-                console.log('Error')
+                res.redirect('/')
+                console.log('Contrasena incorrecta')
             }
         })
     }
