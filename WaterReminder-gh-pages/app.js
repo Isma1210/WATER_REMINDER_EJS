@@ -41,7 +41,13 @@ app.get('/index',(req,res)=>{
 })
 
 app.get('/home',(req,res)=>{
-    res.render('home',{msg:'1200mL'})
+
+    connection.query('SELECT*FROM consumo_agua',(error,results)=>{
+        if(error)throw error;
+        res.render('home',{consumo:results})
+    })
+
+    
     req.session.usuario='Isma',
     req.session.visitas=req.session.visitas ? ++req.session.visitas:1;
     console.log(req.session);
@@ -153,6 +159,20 @@ app.get('/logout',(req,res)=>{
         res.redirect('/')
     })
 })
+
+
+
+//BACK DE FUNCIONES DEL SISTEMA
+app.post('/addWater',(req,res)=>{
+    const cantidad=req.body.taza;
+                    // INSERT INTO consumo_agua(Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida, datos_bebida_CTipo_bebida_idCTipo_bebida)  VALUES
+    connection.query('INSERT INTO consumo_agua(Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida, datos_bebida_CTipo_bebida_idCTipo_bebida)  VALUES ("'+parseInt(cantidad)+'",2,1,1);',(err,respuesta,fields)=>{
+
+        if (err)return console.log("Error",err)
+        return res.sendFile(path.resolve(__dirname,'public/home.html'))
+    })
+})
+
 
 
 app.listen(3150,(req,res)=>{
