@@ -49,7 +49,7 @@ app.get('/home',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-HOME')
 
-        connection.query('SELECT Consumo_Total FROM consumo_agua WHERE Persona_idPersona="'+req.session.idUser+'"',(error,results)=>{
+        connection.query('SELECT * FROM consumo_agua WHERE Persona_idPersona="'+req.session.idUser+'"',(error,results)=>{
             if(error)throw error;
             console.log(results[0].Consumo_Total);
             res.render('home',{consumoUser:results})
@@ -235,7 +235,7 @@ app.post('/registrarse',async(req,res)=>{
     })
     
 
-    connection.query('INSERT INTO persona SET ?',{peso:peso,altura:altura,edad:edad,meta_agua:meta_agua,hora_desp:hora_desp,hora_dormir:hora_dormir,tasa:taza,Actividad_fisica:parseInt(Actividad_fisica),Sexo_idsexo:parseInt(sexo),Privilegio_idPrivilegio:parseInt(privilegio),Usuario_idUsuario:4},async(error,results)=>{
+    connection.query('INSERT INTO persona SET ?',{peso:peso,altura:altura,edad:edad,meta_agua:meta_agua,hora_desp:hora_desp,hora_dormir:hora_dormir,tasa:taza,Actividad_fisica:parseInt(Actividad_fisica),Sexo_idsexo:parseInt(sexo),Privilegio_idPrivilegio:parseInt(privilegio),Usuario_idUsuario:req.session.idUser},async(error,results)=>{
         if (error) {
             console.log(error);
         }else{
@@ -255,6 +255,7 @@ app.post('/auth',async(req,res)=>{
 
         // connection.query('SELECT*FROM usuario')
         connection.query('SELECT idPersona FROM persona INNER JOIN usuario ON persona.Usuario_idUsuario=usuario.idUsuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
+            console.log(`EL id de quien ingreso es: ${respuesta[0].idPersona}`)
             req.session.idUser=respuesta[0].idPersona;
         })
 
@@ -346,10 +347,10 @@ app.post('/addWater',(req,res)=>{
 
 
 //ELIMINAR CONSUMO DE AGUA
-app.post('/delWater',(req,res)=>{
-    const cantidad=req.body.taza;
+app.get('/delWater/:id',(req,res)=>{
+    const idRegistro=req.params.id
 
-    connection.query('DELETE FROM prueba WHERE id="'+parseInt(cantidad)+'";',(err,respuesta,fields)=>{
+    connection.query('DELETE FROM consumo_agua WHERE idConsumo_Agua="'+idRegistro+'";',(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
         return res.redirect('/home');
     })
