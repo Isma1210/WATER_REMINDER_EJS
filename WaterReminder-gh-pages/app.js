@@ -32,58 +32,164 @@ const connection=require('./database/db');
 
 //ESTABLECIENDO RUTAS
 
-// app.get('/',(req,res)=>{
+
+// app.get('/index',(req,res)=>{
 //     res.render('index')
 // })
 
-app.get('/index',(req,res)=>{
-    res.render('index')
-})
-
 app.get('/home',(req,res)=>{
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente')
+        connection.query('SELECT*FROM prueba',(error,results)=>{
+            if(error)throw error;
+            res.render('home',{consumo:results})
+        })
+        
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
 
     //connection.query('SELECT*FROM consumo_agua',(error,results)=>{
-    connection.query('SELECT*FROM prueba',(error,results)=>{
-        if(error)throw error;
-        res.render('home',{consumo:results})
-    })
+    // connection.query('SELECT*FROM prueba',(error,results)=>{
+    //     if(error)throw error;
+    //     res.render('home',{consumo:results})
+    // })
 
     
-    req.session.usuario='Isma',
-    req.session.visitas=req.session.visitas ? ++req.session.visitas:1;
-    console.log(req.session);
+    // req.session.usuario='Isma',
+    // req.session.visitas=req.session.visitas ? ++req.session.visitas:1;
+    // console.log(req.session);
 })
 
 app.get('/registrarse',(req,res)=>{
-    res.render('registrar')
+    if(req.session.loggedin){
+        console.log('Sesion existente')
+        res.render('home',{
+            login:true,
+            name:req.session.Usuario
+
+        })
+    }else{
+        console.log('NO hay sesion activa-Registro')
+        res.render('registrar',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
 })
 
 app.get('/login',(req,res)=>{
-    res.render('login')
+    if(req.session.loggedin){
+        console.log('Sesion existente')
+        res.render('home',{
+            login:true,
+            name:req.session.Usuario
+
+        })
+    }else{
+        console.log('NO hay sesion activa Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
+
 })
+
+
 
 app.get('/tazas',(req,res)=>{
     res.render('cambiar_taza')
 })
 
 app.get('/regAgua',(req,res)=>{
-    res.render('registros')
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente')
+        connection.query('SELECT*FROM prueba',(error,results)=>{
+            if(error)throw error;
+            res.render('registros')
+        })
+        
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
+    
 })
 
 app.get('/Bebidas',(req,res)=>{
-    res.render('otrasbebidas')
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente')
+        connection.query('SELECT*FROM prueba',(error,results)=>{
+            if(error)throw error;
+            res.render('otrasbebidas',{consumo:results})
+        })
+        
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
 })
 
 app.get('/configuracion',(req,res)=>{
-    res.render('configuraciones')
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente')
+        connection.query('SELECT*FROM prueba',(error,results)=>{
+            if(error)throw error;
+            res.render('configuraciones',{consumo:results})
+        })
+        
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
 })
 
 app.get('/pesoaltura',(req,res)=>{
-    res.render('pesoaltura')
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente')
+        connection.query('SELECT*FROM prueba',(error,results)=>{
+            if(error)throw error;
+            res.render('pesoaltura',{consumo:results})
+        })
+        
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
 })
 
 app.get('/changeContra',(req,res)=>{
-    res.render('cambiarcontrasena')
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente')
+        connection.query('SELECT*FROM prueba',(error,results)=>{
+            if(error)throw error;
+            res.render('cambiarcontrasena',{consumo:results})
+        })
+        
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
 })
 
 //BACK DE REGISTRO
@@ -128,15 +234,17 @@ app.post('/registrarse',async(req,res)=>{
 app.post('/auth',async(req,res)=>{
     const Usuario=req.body.usuario;
     const Password=req.body.pass;
-    console.log(Usuario)
+    
     if (Usuario&&Password) {
         console.log(`El usuario: ${Usuario} y la contra: ${Password}`)
+
+        // connection.query('SELECT*FROM usuario')
         
         connection.query('SELECT email FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
             if(respuesta[0].email===Usuario){
                 console.log('Usuario existente')
             }else{
-                res.redirect('/')
+                res.redirect('/login')
                 console.log('Usuario inexistente')
             }
         })
@@ -145,15 +253,20 @@ app.post('/auth',async(req,res)=>{
             
             if(respuesta[0].Password===Password){
                 console.log('Ingreso exitoso al sistema')
+                req.session.loggedin=true;
+                req.session.usuario=Usuario
+                console.log(req.session.usuario)
                 res.redirect('/home')
             }else{
-                res.redirect('/')
+                res.redirect('/login')
                 console.log('Contrasena incorrecta')
             }
         })
+    }else{
+        res.redirect('/login')
     }
 
-    req.session.loggedin=true;
+    
 
 
 
@@ -162,13 +275,16 @@ app.post('/auth',async(req,res)=>{
 //CONFIRMAR SESIONES
 app.get('/',(req,res)=>{
     if(req.session.loggedin){
-        console.log('Sesion creada')
-        res.render('/configuracion',{
+        console.log('Sesion creada y existente')
+        
+        res.render('home',{
             login:true,
             name:req.session.Usuario
+
         })
     }else{
         console.log('NO hay sesion activa')
+        
         res.render('index',{
             login:false,
             name:'Inicie Sesion'
@@ -187,16 +303,24 @@ app.get('/logout',(req,res)=>{
 
 
 //BACK DE FUNCIONES DEL SISTEMA
+
+//AGREGAR CONSUMO DE AGUA
 app.post('/addWater',(req,res)=>{
     const cantidad=req.body.taza;
-                    // INSERT INTO consumo_agua(Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida, datos_bebida_CTipo_bebida_idCTipo_bebida)  VALUES
-    // connection.query('INSERT INTO consumo_agua(Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida, datos_bebida_CTipo_bebida_idCTipo_bebida)  VALUES ("'+parseInt(cantidad)+'",2,1,1);',(err,respuesta,fields)=>{
 
-    //     if (err)return console.log("Error",err)
-    //     return res.sendFile(path.resolve(__dirname,'public/home.html'))
-    // })
+    connection.query('INSERT INTO prueba(consumo) VALUES ("'+parseInt(cantidad)+'");',(err,respuesta,fields)=>{
+        if (err)return console.log("Error",err)
+        return res.redirect('/home');
+    })
 
-    connection.query('INSERT INTO prueba VALUES ("'+parseInt(cantidad)+'");',(err,respuesta,fields)=>{
+})
+
+
+//ELIMINAR CONSUMO DE AGUA
+app.post('/delWater',(req,res)=>{
+    const cantidad=req.body.taza;
+
+    connection.query('DELETE FROM prueba WHERE id="'+parseInt(cantidad)+'";',(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
         return res.redirect('/home');
     })

@@ -84,13 +84,13 @@
                                 <input type="button" value="Cambiar taza"class="btn btn-primary"></a></div>
                             </form>
                             <br>
-							<form name="registrodiario"><center>
+							<form name="registrodiario" action="/"><center>
 						        <table width="600" border="1">
                                     <tbody>
                                         <% consumo.forEach((user)=>{%> 
                                         <tr>
                                             <td><h2><img src="resources/agua.gif" class="border" height="70px" width="70px"></h2><br><br>&nbsp;</td>
-                                            <td><%= user.Consumo %></td>
+                                            <td><%= user.consumo %></td>
                                         </tr>
                                         <%})%>
                                     </tbody>
