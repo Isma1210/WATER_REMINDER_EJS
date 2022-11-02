@@ -37,13 +37,29 @@ const connection=require('./database/db');
 //     res.render('index')
 // })
 
+
+// connection.query('SELECT*FROM consumo_agua WHERE Persona_idPersona="'+req.session.idUser+'"',(error,results)=>{
+//     if(error)throw error;
+//     res.render('home',{consumo:results})
+//     console.log(`La sesion se ha creado con idPersona: ${req.session.idUser}`);
+// })
+
+
 app.get('/home',(req,res)=>{
     if(req.session.loggedin){
-        console.log('Sesion creada y existente')
-        connection.query('SELECT*FROM prueba',(error,results)=>{
+        console.log('Sesion creada y existente-HOME')
+
+        connection.query('SELECT Consumo_Total FROM consumo_agua WHERE Persona_idPersona="'+req.session.idUser+'"',(error,results)=>{
             if(error)throw error;
-            res.render('home',{consumo:results})
+            console.log(results[0].Consumo_Total);
+            res.render('home',{consumoUser:results})
         })
+
+        // connection.query('SELECT*FROM prueba',(error,results)=>{
+        //     if(error)throw error;
+        //     res.render('home',{consumo:results})
+        //     console.log(`La sesion se ha creado con idPersona: ${req.session.idUser}`);
+        // })
         
     }else{
         console.log('NO hay sesion activa-Login')
@@ -108,7 +124,7 @@ app.get('/tazas',(req,res)=>{
 
 app.get('/regAgua',(req,res)=>{
     if(req.session.loggedin){
-        console.log('Sesion creada y existente')
+        console.log('Sesion creada y existente-graficaAgua')
         connection.query('SELECT*FROM prueba',(error,results)=>{
             if(error)throw error;
             res.render('registros')
@@ -126,7 +142,7 @@ app.get('/regAgua',(req,res)=>{
 
 app.get('/Bebidas',(req,res)=>{
     if(req.session.loggedin){
-        console.log('Sesion creada y existente')
+        console.log('Sesion creada y existente-otrasBebidas')
         connection.query('SELECT*FROM prueba',(error,results)=>{
             if(error)throw error;
             res.render('otrasbebidas',{consumo:results})
@@ -143,7 +159,7 @@ app.get('/Bebidas',(req,res)=>{
 
 app.get('/configuracion',(req,res)=>{
     if(req.session.loggedin){
-        console.log('Sesion creada y existente')
+        console.log('Sesion creada y existente-Configuracion')
         connection.query('SELECT*FROM prueba',(error,results)=>{
             if(error)throw error;
             res.render('configuraciones',{consumo:results})
@@ -160,7 +176,7 @@ app.get('/configuracion',(req,res)=>{
 
 app.get('/pesoaltura',(req,res)=>{
     if(req.session.loggedin){
-        console.log('Sesion creada y existente')
+        console.log('Sesion creada y existente-PesoAlt')
         connection.query('SELECT*FROM prueba',(error,results)=>{
             if(error)throw error;
             res.render('pesoaltura',{consumo:results})
@@ -177,7 +193,7 @@ app.get('/pesoaltura',(req,res)=>{
 
 app.get('/changeContra',(req,res)=>{
     if(req.session.loggedin){
-        console.log('Sesion creada y existente')
+        console.log('Sesion creada y existente-Contrasena')
         connection.query('SELECT*FROM prueba',(error,results)=>{
             if(error)throw error;
             res.render('cambiarcontrasena',{consumo:results})
@@ -236,10 +252,12 @@ app.post('/auth',async(req,res)=>{
     const Password=req.body.pass;
     
     if (Usuario&&Password) {
-        console.log(`El usuario: ${Usuario} y la contra: ${Password}`)
 
         // connection.query('SELECT*FROM usuario')
-        
+        connection.query('SELECT idPersona FROM persona INNER JOIN usuario ON persona.Usuario_idUsuario=usuario.idUsuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
+            req.session.idUser=respuesta[0].idPersona;
+        })
+
         connection.query('SELECT email FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
             if(respuesta[0].email===Usuario){
                 console.log('Usuario existente')
@@ -254,14 +272,18 @@ app.post('/auth',async(req,res)=>{
             if(respuesta[0].Password===Password){
                 console.log('Ingreso exitoso al sistema')
                 req.session.loggedin=true;
-                req.session.usuario=Usuario
-                console.log(req.session.usuario)
+                req.session.usuario=Usuario;
                 res.redirect('/home')
             }else{
                 res.redirect('/login')
                 console.log('Contrasena incorrecta')
             }
         })
+
+        
+
+        
+
     }else{
         res.redirect('/login')
     }
@@ -308,7 +330,14 @@ app.get('/logout',(req,res)=>{
 app.post('/addWater',(req,res)=>{
     const cantidad=req.body.taza;
 
-    connection.query('INSERT INTO prueba(consumo) VALUES ("'+parseInt(cantidad)+'");',(err,respuesta,fields)=>{
+    // connection.query('INSERT INTO prueba(consumo) VALUES ("'+parseInt(cantidad)+'");',(err,respuesta,fields)=>{
+    //     if (err)return console.log("Error",err)
+    //     return res.redirect('/home');
+    // })
+
+    //INSERT INTO consumo_agua (Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES (200,1,1,1);
+
+    connection.query('INSERT INTO consumo_agua (Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES ("'+parseInt(cantidad)+'","'+req.session.idUser+'",1,1);',(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
         return res.redirect('/home');
     })
