@@ -51,7 +51,6 @@ app.get('/home',(req,res)=>{
 
         connection.query('SELECT * FROM consumo_agua WHERE Persona_idPersona="'+req.session.idUser+'"',(error,results)=>{
             if(error)throw error;
-            console.log(results[0].Consumo_Total);
             res.render('home',{consumoUser:results})
         })
 
@@ -235,7 +234,7 @@ app.post('/registrarse',async(req,res)=>{
     })
     
 
-    connection.query('INSERT INTO persona SET ?',{peso:peso,altura:altura,edad:edad,meta_agua:meta_agua,hora_desp:hora_desp,hora_dormir:hora_dormir,tasa:taza,Actividad_fisica:parseInt(Actividad_fisica),Sexo_idsexo:parseInt(sexo),Privilegio_idPrivilegio:parseInt(privilegio),Usuario_idUsuario:req.session.idUser},async(error,results)=>{
+    connection.query('INSERT INTO persona SET ?',{peso:peso,altura:altura,edad:edad,meta_agua:meta_agua,hora_desp:hora_desp,hora_dormir:hora_dormir,tasa:taza,Actividad_fisica:parseInt(Actividad_fisica),Sexo_idsexo:parseInt(sexo),Privilegio_idPrivilegio:parseInt(privilegio),Usuario_idUsuario:3},async(error,results)=>{
         if (error) {
             console.log(error);
         }else{
@@ -331,6 +330,14 @@ app.get('/logout',(req,res)=>{
 app.post('/addWater',(req,res)=>{
     const cantidad=req.body.taza;
 
+    const fechaHora=new Date();
+    const anio=fechaHora.getFullYear()
+    const mes=fechaHora.getMonth()
+    const dia=fechaHora.getDate()
+    console.log(fechaHora.getFullYear())
+    console.log(fechaHora.getMonth())
+    console.log(fechaHora.getDate())
+
     // connection.query('INSERT INTO prueba(consumo) VALUES ("'+parseInt(cantidad)+'");',(err,respuesta,fields)=>{
     //     if (err)return console.log("Error",err)
     //     return res.redirect('/home');
@@ -338,7 +345,7 @@ app.post('/addWater',(req,res)=>{
 
     //INSERT INTO consumo_agua (Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES (200,1,1,1);
 
-    connection.query('INSERT INTO consumo_agua (Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES ("'+parseInt(cantidad)+'","'+req.session.idUser+'",1,1);',(err,respuesta,fields)=>{
+    connection.query(`INSERT INTO consumo_agua (Consumo_Total,Fecha,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES (${parseInt(cantidad)},'${anio}-${mes}-${dia}',${req.session.idUser},1,1)`,(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
         return res.redirect('/home');
     })
@@ -356,6 +363,8 @@ app.get('/delWater/:id',(req,res)=>{
     })
 
 })
+
+//CAMBIAR CONTRASENA
 
 
 
