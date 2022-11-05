@@ -377,6 +377,32 @@ app.post('/changeContra',(req,res)=>{
 
 })
 
+//CAMBIAR Peso
+app.post('/changePeso',(req,res)=>{
+    const peso=req.body.peso
+    console.log(`Contra actualizada de: ${req.session.idUser}`)
+    connection.query(`UPDATE persona SET peso=${peso} WHERE Usuario_idUsuario=${req.session.idUser}`,(err,respuesta,fields)=>{
+        if (err)return console.log("Error",err)
+        console.log(`Peso actualizado de: ${req.session.idUser}`)
+        return res.redirect('/configuracion');
+        
+    })
+
+})
+
+//CAMBIAR ALTURA
+app.post('/changeAltura',(req,res)=>{
+    const altura=req.body.altura
+    console.log(`Contra actualizada de: ${req.session.idUser}`)
+    connection.query(`UPDATE persona SET altura=${altura} WHERE Usuario_idUsuario=${req.session.idUser}`,(err,respuesta,fields)=>{
+        if (err)return console.log("Error",err)
+        console.log(`Altura actualizada de: ${req.session.idUser}`)
+        return res.redirect('/configuracion');
+        
+    })
+
+})
+
 
 app.listen(3150,(req,res)=>{
     console.log('Escuchando desde el puerto 3150')
