@@ -58,17 +58,18 @@
             <div class="container">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Contraseña nueva&nbsp;</h4>
-                           <input class="pass" name="pass" id="pass" type="text">
-                           <br>
-                           <br>
-                           <h4>Vuelva a introducir su contraseña&nbsp;</h4>
-                           <input class="pass" name="pass" id="pass" type="pass">
-                           <br> <br>
-                           <a href="/home">
-                               <button class="btn btn-primary btn-rounded" id="boton" type="submit" onclick="" value="Iniciar sesion">Confirmar</button></a>
-                      </div>
+                        <form action="/changeContra" method="post">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h4>Contraseña nueva&nbsp;</h4>
+                               <input class="pass" name="pass1" id="pass" type="password">
+                               <br>
+                               <br>
+                               <h4>Vuelva a introducir su contraseña&nbsp;</h4>
+                               <input class="pass" name="pass2" id="pass" type="password">
+                               <br> <br>                        
+                          </div>
+                          <button class="btn btn-primary btn-rounded" id="boton" type="submit" onclick="" value="Iniciar sesion">Confirmar</button>
+                        </form>
                     </div>
                 </div>
             </div>        

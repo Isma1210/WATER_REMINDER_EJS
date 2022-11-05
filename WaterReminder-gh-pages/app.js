@@ -365,7 +365,17 @@ app.get('/delWater/:id',(req,res)=>{
 })
 
 //CAMBIAR CONTRASENA
+app.post('/changeContra',(req,res)=>{
+    const contra=req.body.pass2
+    console.log(`Contra actualizada de: ${req.session.idUser}`)
+    connection.query(`UPDATE usuario SET Password=${contra} WHERE idUsuario=${req.session.idUser}`,(err,respuesta,fields)=>{
+        if (err)return console.log("Error",err)
+        console.log(`Contra actualizada de: ${req.session.idUser}`)
+        return res.redirect('/home');
+        
+    })
 
+})
 
 
 app.listen(3150,(req,res)=>{
