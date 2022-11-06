@@ -58,14 +58,14 @@
             <div class="container">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <form action="/changeContra" method="post">
+                        <form action="/changeContra" onsubmit="changePassword()" method="post">
                             <div class="carousel-caption d-none d-md-block">
                                 <h4>Contraseña nueva&nbsp;</h4>
-                               <input class="pass" name="pass1" id="pass" type="password">
+                               <input class="pass" name="pass1" id="pass1" type="password">
                                <br>
                                <br>
                                <h4>Vuelva a introducir su contraseña&nbsp;</h4>
-                               <input class="pass" name="pass2" id="pass" type="password">
+                               <input class="pass" name="pass2" id="pass2" type="password">
                                <br> <br>                        
                           </div>
                           <button class="btn btn-primary btn-rounded" id="boton" type="submit" onclick="" value="Iniciar sesion">Confirmar</button>
@@ -89,6 +89,8 @@
 
     <!-- Ollie js -->
     <script src="resources/assets/js/Ollie.js"></script>
+
+    <script src="/validaciones.js"></script>
 
 </body>
 </html>

@@ -8,16 +8,16 @@ const dotenv=require('dotenv');
 dotenv.config({path:'./env/.env'})
 
 app.use('/resources',express.static('public'));
-app.use('/resources',express.static(__dirname+'/public'));
+app.use('/resources',express.static(__dirname+'/public')); //RUTA DE CARPETA DE RECURSOS EXTERNOS
 
 
-//ESTABLECIENDO EL MOTOR DE PLANTILLAS
+//------ESTABLECIENDO EL MOTOR DE PLANTILLAS EJS------
 app.set('view engine','ejs');
 
-//INVOCANDO BCRYPTJS
+//------INVOCANDO BCRYPTJS------
 const bcryptjs=require('bcryptjs');
 
-//Vars de sesion
+//------VARS DE SESION
 const session=require('express-session');
 app.use(session({
     secret:'secret',
@@ -25,61 +25,30 @@ app.use(session({
     saveUninitialized:true
 }));
 
-
-//INVOCAMOS A LA CON DE LA BD
+//------INVOCAMOS A LA CONEXION DE LA BD------
 const connection=require('./database/db');
 
 
-//ESTABLECIENDO RUTAS
 
-
-// app.get('/index',(req,res)=>{
-//     res.render('index')
-// })
-
-
-// connection.query('SELECT*FROM consumo_agua WHERE Persona_idPersona="'+req.session.idUser+'"',(error,results)=>{
-//     if(error)throw error;
-//     res.render('home',{consumo:results})
-//     console.log(`La sesion se ha creado con idPersona: ${req.session.idUser}`);
-// })
-
-
-app.get('/home',(req,res)=>{
+//------RUTAS DE LAS PAGINAS------
+//RUTA RAIZ
+app.get('/',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-HOME')
+        res.render('home',{
+            login:true,
+            name:req.session.Usuario
 
-        connection.query('SELECT * FROM consumo_agua WHERE Persona_idPersona="'+req.session.idUser+'"',(error,results)=>{
-            if(error)throw error;
-            res.render('home',{consumoUser:results})
         })
-
-        // connection.query('SELECT*FROM prueba',(error,results)=>{
-        //     if(error)throw error;
-        //     res.render('home',{consumo:results})
-        //     console.log(`La sesion se ha creado con idPersona: ${req.session.idUser}`);
-        // })
-        
     }else{
-        console.log('NO hay sesion activa-Login')
-        res.render('login',{
+        console.log('NO hay sesion activa')
+        res.render('index',{
             login:false,
             name:'Inicie Sesion'
         })
     }
-
-    //connection.query('SELECT*FROM consumo_agua',(error,results)=>{
-    // connection.query('SELECT*FROM prueba',(error,results)=>{
-    //     if(error)throw error;
-    //     res.render('home',{consumo:results})
-    // })
-
-    
-    // req.session.usuario='Isma',
-    // req.session.visitas=req.session.visitas ? ++req.session.visitas:1;
-    // console.log(req.session);
 })
-
+//REGISTRO DE USUARIO--
 app.get('/registrarse',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion existente')
@@ -96,7 +65,7 @@ app.get('/registrarse',(req,res)=>{
         })
     }
 })
-
+//INICIO DE SESION--
 app.get('/login',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion existente')
@@ -112,23 +81,28 @@ app.get('/login',(req,res)=>{
             name:'Inicie Sesion'
         })
     }
-
 })
-
-
-
-app.get('/tazas',(req,res)=>{
-    res.render('cambiar_taza')
+//HOME--CONFIRMAR CONSUMO DE AGUA Y TABLA DE CONSUMO
+app.get('/home',(req,res)=>{
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente-HOME')
+        connection.query('SELECT * FROM consumo_agua WHERE Persona_idPersona="'+req.session.idPersona+'"',(error,results)=>{
+            if(error)throw error;
+            res.render('home',{consumoUser:results})
+        })
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
 })
-
+//REGISTROS DE CONSUMO DE AGUA
 app.get('/regAgua',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-graficaAgua')
-        connection.query('SELECT*FROM prueba',(error,results)=>{
-            if(error)throw error;
-            res.render('registros')
-        })
-        
+        res.render('registros')
     }else{
         console.log('NO hay sesion activa-Login')
         res.render('login',{
@@ -138,15 +112,11 @@ app.get('/regAgua',(req,res)=>{
     }
     
 })
-
+//OTRAS BEBIDAS--
 app.get('/Bebidas',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-otrasBebidas')
-        connection.query('SELECT*FROM prueba',(error,results)=>{
-            if(error)throw error;
-            res.render('otrasbebidas',{consumo:results})
-        })
-        
+        res.render('otrasbebidas')
     }else{
         console.log('NO hay sesion activa-Login')
         res.render('login',{
@@ -155,15 +125,11 @@ app.get('/Bebidas',(req,res)=>{
         })
     }
 })
-
+//CONFIGURACIONES DEL USUARIO--
 app.get('/configuracion',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-Configuracion')
-        connection.query('SELECT*FROM prueba',(error,results)=>{
-            if(error)throw error;
-            res.render('configuraciones',{consumo:results})
-        })
-        
+        res.render('configuraciones')
     }else{
         console.log('NO hay sesion activa-Login')
         res.render('login',{
@@ -172,15 +138,11 @@ app.get('/configuracion',(req,res)=>{
         })
     }
 })
-
+//CAMBIAR PESO Y ALTURA--
 app.get('/pesoaltura',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-PesoAlt')
-        connection.query('SELECT*FROM prueba',(error,results)=>{
-            if(error)throw error;
-            res.render('pesoaltura',{consumo:results})
-        })
-        
+        res.render('pesoaltura')
     }else{
         console.log('NO hay sesion activa-Login')
         res.render('login',{
@@ -189,15 +151,11 @@ app.get('/pesoaltura',(req,res)=>{
         })
     }
 })
-
+//CAMBIAR CONTRASENAS--
 app.get('/changeContra',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-Contrasena')
-        connection.query('SELECT*FROM prueba',(error,results)=>{
-            if(error)throw error;
-            res.render('cambiarcontrasena',{consumo:results})
-        })
-        
+        res.render('cambiarcontrasena')
     }else{
         console.log('NO hay sesion activa-Login')
         res.render('login',{
@@ -206,8 +164,20 @@ app.get('/changeContra',(req,res)=>{
         })
     }
 })
+//GRUPOS--
+app.get('/grupo',(req,res)=>{
+    res.render('grupos')
+})
+//DENTRO DEL GRUPO--
+app.get('/grupos',(req,res)=>{
+    res.render('grupos1')
+})
 
-//BACK DE REGISTRO
+
+//------BACK DE FUNCIONES DE REGISTRO E INICIO DE SESION------
+
+
+//BACK DE REGISTRO DE USUARIO
 app.post('/registrarse',async(req,res)=>{
     const nombre=req.body.name;
     const user=req.body.correo;
@@ -228,11 +198,9 @@ app.post('/registrarse',async(req,res)=>{
             console.log(error);
         }else{
             console.log('Usuario Registrado con exito')
-            // res.redirect('/login')
         }
 
     })
-    
 
     connection.query('INSERT INTO persona SET ?',{peso:peso,altura:altura,edad:edad,meta_agua:meta_agua,hora_desp:hora_desp,hora_dormir:hora_dormir,tasa:taza,Actividad_fisica:parseInt(Actividad_fisica),Sexo_idsexo:parseInt(sexo),Privilegio_idPrivilegio:parseInt(privilegio),Usuario_idUsuario:3},async(error,results)=>{
         if (error) {
@@ -242,7 +210,6 @@ app.post('/registrarse',async(req,res)=>{
             res.redirect('/login')
         }
     })
-
 })
 
 //BACK DE LOGIN
@@ -251,11 +218,9 @@ app.post('/auth',async(req,res)=>{
     const Password=req.body.pass;
     
     if (Usuario&&Password) {
-
-        // connection.query('SELECT*FROM usuario')
         connection.query('SELECT idPersona FROM persona INNER JOIN usuario ON persona.Usuario_idUsuario=usuario.idUsuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
             console.log(`EL id de quien ingreso es: ${respuesta[0].idPersona}`)
-            req.session.idUser=respuesta[0].idPersona;
+            req.session.idPersona=respuesta[0].idPersona; //Guardando Id de persona en la sesion
         })
 
         connection.query('SELECT email FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
@@ -271,48 +236,19 @@ app.post('/auth',async(req,res)=>{
             
             if(respuesta[0].Password===Password){
                 console.log('Ingreso exitoso al sistema')
-                req.session.loggedin=true;
-                req.session.usuario=Usuario;
+                req.session.loggedin=true; //Creando la sesion
+                req.session.usuario=Usuario; //Guardando nombre de usuario en la sesion
                 res.redirect('/home')
             }else{
                 res.redirect('/login')
                 console.log('Contrasena incorrecta')
             }
         })
-
-        
-
-        
-
     }else{
         res.redirect('/login')
     }
-
-    
-
-
-
 })
 
-//CONFIRMAR SESIONES
-app.get('/',(req,res)=>{
-    if(req.session.loggedin){
-        console.log('Sesion creada y existente')
-        
-        res.render('home',{
-            login:true,
-            name:req.session.Usuario
-
-        })
-    }else{
-        console.log('NO hay sesion activa')
-        
-        res.render('index',{
-            login:false,
-            name:'Inicie Sesion'
-        })
-    }
-})
 
 //CERRAR SESION
 app.get('/logout',(req,res)=>{
@@ -322,30 +258,17 @@ app.get('/logout',(req,res)=>{
     })
 })
 
-
-
-//BACK DE FUNCIONES DEL SISTEMA
+//------BACK DE FUNCIONES DEL SISTEMA------
 
 //AGREGAR CONSUMO DE AGUA
 app.post('/addWater',(req,res)=>{
     const cantidad=req.body.taza;
-
     const fechaHora=new Date();
     const anio=fechaHora.getFullYear()
     const mes=fechaHora.getMonth()
     const dia=fechaHora.getDate()
-    console.log(fechaHora.getFullYear())
-    console.log(fechaHora.getMonth())
-    console.log(fechaHora.getDate())
 
-    // connection.query('INSERT INTO prueba(consumo) VALUES ("'+parseInt(cantidad)+'");',(err,respuesta,fields)=>{
-    //     if (err)return console.log("Error",err)
-    //     return res.redirect('/home');
-    // })
-
-    //INSERT INTO consumo_agua (Consumo_Total,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES (200,1,1,1);
-
-    connection.query(`INSERT INTO consumo_agua (Consumo_Total,Fecha,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES (${parseInt(cantidad)},'${anio}-${mes}-${dia}',${req.session.idUser},1,1)`,(err,respuesta,fields)=>{
+    connection.query(`INSERT INTO consumo_agua (Consumo_Total,Fecha,Persona_idPersona,datos_bebida_idRegistro_bebida,datos_bebida_CTipo_bebida_idCTipo_bebida) VALUES (${parseInt(cantidad)},'${anio}-${mes}-${dia}',${req.session.idPersona},1,1)`,(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
         return res.redirect('/home');
     })
@@ -357,7 +280,7 @@ app.post('/addWater',(req,res)=>{
 app.get('/delWater/:id',(req,res)=>{
     const idRegistro=req.params.id
 
-    connection.query('DELETE FROM consumo_agua WHERE idConsumo_Agua="'+idRegistro+'";',(err,respuesta,fields)=>{
+    connection.query('DELETE FROM consumo_agua WHERE idConsumo_Agua="'+idRegistro+'"',(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
         return res.redirect('/home');
     })
@@ -367,23 +290,26 @@ app.get('/delWater/:id',(req,res)=>{
 //CAMBIAR CONTRASENA
 app.post('/changeContra',(req,res)=>{
     const contra=req.body.pass2
-    console.log(`Contra actualizada de: ${req.session.idUser}`)
-    connection.query(`UPDATE usuario SET Password=${contra} WHERE idUsuario=${req.session.idUser}`,(err,respuesta,fields)=>{
-        if (err)return console.log("Error",err)
-        console.log(`Contra actualizada de: ${req.session.idUser}`)
-        return res.redirect('/home');
-        
-    })
+    const contra2=req.body.pass1
+    if (contra===contra2) {
+        connection.query(`UPDATE usuario SET Password=${contra} WHERE idUsuario=${req.session.idPersona}`,(err,respuesta,fields)=>{
+            if (err)return console.log("Error",err)
+            return res.redirect('/home');
+            
+        })
+    }else{
+        res.redirect('/configuracion');
+    }
+
+    
 
 })
 
-//CAMBIAR Peso
+//CAMBIAR PESO
 app.post('/changePeso',(req,res)=>{
     const peso=req.body.peso
-    console.log(`Contra actualizada de: ${req.session.idUser}`)
-    connection.query(`UPDATE persona SET peso=${peso} WHERE Usuario_idUsuario=${req.session.idUser}`,(err,respuesta,fields)=>{
+    connection.query(`UPDATE persona SET peso=${peso} WHERE Usuario_idUsuario=${req.session.idPersona}`,(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
-        console.log(`Peso actualizado de: ${req.session.idUser}`)
         return res.redirect('/configuracion');
         
     })
@@ -393,10 +319,8 @@ app.post('/changePeso',(req,res)=>{
 //CAMBIAR ALTURA
 app.post('/changeAltura',(req,res)=>{
     const altura=req.body.altura
-    console.log(`Contra actualizada de: ${req.session.idUser}`)
-    connection.query(`UPDATE persona SET altura=${altura} WHERE Usuario_idUsuario=${req.session.idUser}`,(err,respuesta,fields)=>{
+    connection.query(`UPDATE persona SET altura=${altura} WHERE Usuario_idUsuario=${req.session.idPersona}`,(err,respuesta,fields)=>{
         if (err)return console.log("Error",err)
-        console.log(`Altura actualizada de: ${req.session.idUser}`)
         return res.redirect('/configuracion');
         
     })
@@ -404,6 +328,7 @@ app.post('/changeAltura',(req,res)=>{
 })
 
 
+//DEPLOY EN EL PUERTO
 app.listen(3150,(req,res)=>{
     console.log('Escuchando desde el puerto 3150')
 })

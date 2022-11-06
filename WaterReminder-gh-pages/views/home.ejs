@@ -40,6 +40,9 @@
                         <a class="nav-link" href="/Bebidas">Otras bebidas</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/grupo">Grupos&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/configuracion">Configuración&nbsp;</a>
                     </li>
                 </ul>
@@ -78,11 +81,6 @@
                                     </div>
                                 </form>
                             </div>
-                            <form name="cambiartaza" action="">
-                            <div align="center" id="cambiartaza">
-                                <a href="/tazas">
-                                <input type="button" value="Cambiar taza"class="btn btn-primary"></a></div>
-                            </form>
                             <br>
 							<form name="registrodiario" action="/"><center>
 						        <table width="600" border="1">
@@ -91,7 +89,7 @@
                                         <tr>
                                             <td><h2><img src="resources/agua.gif" class="border" height="70px" width="70px"></h2><br><br>&nbsp;</td>
                                             <td><%= user.Consumo_Total %></td>
-                                            <!-- <td><%= user.Fecha %></td> -->
+                                            <!-- <td><%= user.Fecha %></td> ACTIVAR HASTA QUE SE CORRIJAN LOS ESTILOS DE LA TABLA--> 
                                             <td><a href="/delWater/<%= user.idConsumo_Agua %>">X</a></td>
                                         </tr>
                                         <%})%>
