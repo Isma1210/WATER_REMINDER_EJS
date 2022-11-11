@@ -20,9 +20,9 @@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-       <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <a href="index.html" class="navbar-brand" href="index.html"><img src="resources/assets/imgs/logo.svg" alt="" class="brand-img"></a>
+            <a href="home.html" class="navbar-brand"><img src="resources/assets/imgs/plantita.png" alt="" class="brand-img"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,18 +33,17 @@
                         <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/configuracion">Configuracion&nbsp;</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/regAgua">Registro&nbsp;</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Bebidas.html">Otras bebidas</a>
+                        <a class="nav-link" href="/Bebidas">Otras bebidas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact"></a>
+                        <a class="nav-link" href="/configuracion">Configuración&nbsp;</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="/grupo">Grupos&nbsp;</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,14 +57,14 @@
             <div class="container">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <form action="/changeContra" onsubmit="changePassword()" method="post">
+                        <form action="/changeContra" method="post">
                             <div class="carousel-caption d-none d-md-block">
                                 <h4>Contraseña nueva&nbsp;</h4>
-                               <input class="pass" name="pass1" id="pass1" type="password">
+                               <input class="pass" name="pass1" id="pass" type="password">
                                <br>
                                <br>
                                <h4>Vuelva a introducir su contraseña&nbsp;</h4>
-                               <input class="pass" name="pass2" id="pass2" type="password">
+                               <input class="pass" name="pass2" id="pass" type="password">
                                <br> <br>                        
                           </div>
                           <button class="btn btn-primary btn-rounded" id="boton" type="submit" onclick="" value="Iniciar sesion">Confirmar</button>
@@ -89,8 +88,6 @@
 
     <!-- Ollie js -->
     <script src="resources/assets/js/Ollie.js"></script>
-
-    <script src="/validaciones.js"></script>
 
 </body>
 </html>

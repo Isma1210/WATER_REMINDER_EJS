@@ -88,7 +88,7 @@ app.get('/home',(req,res)=>{
         console.log('Sesion creada y existente-HOME')
         connection.query('SELECT * FROM consumo_agua WHERE Persona_idPersona="'+req.session.idPersona+'"',(error,results)=>{
             if(error)throw error;
-            res.render('home',{consumoUser:results})
+            res.render('home',{consumoUser:results,nombre:req.session.nombre})
         })
     }else{
         console.log('NO hay sesion activa-Login')
@@ -164,63 +164,73 @@ app.get('/changeContra',(req,res)=>{
         })
     }
 })
-//GRUPOS--
-app.get('/grupo',(req,res)=>{
-    res.render('grupos')
-})
-//DENTRO DEL GRUPO--
-app.get('/grupos',(req,res)=>{
-    res.render('grupos1')
-})
+
 
 
 //------BACK DE FUNCIONES DE REGISTRO E INICIO DE SESION------
 
 
 //BACK DE REGISTRO DE USUARIO
-app.post('/registrarse',async(req,res)=>{
-    const nombre=req.body.name;
-    const user=req.body.correo;
-    const password=req.body.pass;
-    const peso=req.body.peso;
-    const altura=req.body.altura;
-    const edad=req.body.edad;
-    const meta_agua='2300';
-    const hora_desp=req.body.despertar;
-    const hora_dormir=req.body.dormir;
-    const taza=0;
-    const Actividad_fisica=req.body.actFisica;
-    const sexo=req.body.sexo;
-    const privilegio=1;
+//BACK DE REGISTRO
+app.post('/registrarse', async (req, res) => {
+    const nombre = req.body.name;
+    const user = req.body.correo;
+    const password = req.body.pass;
+    const peso = req.body.peso;
+    const altura = req.body.altura;
+    const edad = req.body.edad;
+    const meta_agua = '2300';
+    const hora_desp = req.body.despertar;
+    const hora_dormir = req.body.dormir;
+    const taza = 0;
+    const Actividad_fisica = req.body.actFisica;
+    const sexo = req.body.sexo;
+    const privilegio = 1;
 
-    connection.query('INSERT INTO usuario SET ?',{Usuario:nombre,Password:password,email:user,Sesion:0},async(error,results)=>{
+    connection.query('INSERT INTO usuario SET ?', { Usuario: nombre, Password: password, email: user, Sesion: 0 }, async (error, results) => {
         if (error) {
             console.log(error);
-        }else{
+        } else {
             console.log('Usuario Registrado con exito')
+
+
+            connection.query('select idUsuario from usuario where email = ? and Password = ? ', [user, password], async (error, results) => {
+                if (error) return console.log("Error", error)
+
+                var idUsuario = 0;
+                idUsuario = results[0].idUsuario;
+                console.log('el id recuperado' + results[0].idUsuario)
+
+                connection.query('INSERT INTO persona SET ?', { peso: peso, altura: altura, edad: edad, meta_agua: meta_agua, hora_desp: hora_desp, hora_dormir: hora_dormir, tasa: taza, Actividad_fisica: parseInt(Actividad_fisica), Sexo_idsexo: parseInt(sexo), Privilegio_idPrivilegio: parseInt(privilegio), Usuario_idUsuario: idUsuario }, async (error, results) => {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Persona Registrada con exito')
+                        res.redirect('/login')
+                    }
+                })
+
+
+            })
+
         }
 
     })
 
-    connection.query('INSERT INTO persona SET ?',{peso:peso,altura:altura,edad:edad,meta_agua:meta_agua,hora_desp:hora_desp,hora_dormir:hora_dormir,tasa:taza,Actividad_fisica:parseInt(Actividad_fisica),Sexo_idsexo:parseInt(sexo),Privilegio_idPrivilegio:parseInt(privilegio),Usuario_idUsuario:3},async(error,results)=>{
-        if (error) {
-            console.log(error);
-        }else{
-            console.log('Persona Registrada con exito')
-            res.redirect('/login')
-        }
-    })
+
+
+
 })
-
 //BACK DE LOGIN
 app.post('/auth',async(req,res)=>{
     const Usuario=req.body.usuario;
     const Password=req.body.pass;
     
     if (Usuario&&Password) {
-        connection.query('SELECT idPersona FROM persona INNER JOIN usuario ON persona.Usuario_idUsuario=usuario.idUsuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
+        connection.query('SELECT idPersona, idUsuario FROM persona INNER JOIN usuario ON persona.Usuario_idUsuario=usuario.idUsuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
             console.log(`EL id de quien ingreso es: ${respuesta[0].idPersona}`)
             req.session.idPersona=respuesta[0].idPersona; //Guardando Id de persona en la sesion
+            //req.session.idUsuario = respuesta[0].idUsuario;
         })
 
         connection.query('SELECT email FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
@@ -230,6 +240,10 @@ app.post('/auth',async(req,res)=>{
                 res.redirect('/login')
                 console.log('Usuario inexistente')
             }
+        })
+
+        connection.query('SELECT usuario FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
+            req.session.nombre=respuesta[0].usuario;
         })
         
         connection.query('SELECT Password FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
@@ -326,6 +340,133 @@ app.post('/changeAltura',(req,res)=>{
     })
 
 })
+
+//----------BACK DE FUNCIONES DE GRUPO-------------
+//Apartadfo de grupos
+app.get('/grupo', (req, res) => {
+    if (req.session.loggedin) {
+        console.log('Sesion existente')
+        var idPersona = req.session.idPersona;
+        var query = String("select persona_has_cgrupos.CGrupos_idCGrupos as 'codigo1', Cgrupos.idcGrupos as 'codigo2',persona_has_cgrupos.persona_idPersona as 'idPersona' , Cgrupos.Nombre_Grupo as 'nombreGrupo' from persona_has_cgrupos Inner join Cgrupos	on persona_has_cgrupos.CGrupos_idCGrupos = CGrupos.idCGrupos where persona_has_cgrupos.persona_idPersona = ?; ")
+        connection.query(query, [idPersona], (error, respuesta) => {
+            if (error) {
+                console.log("errror al seleccionar" + error);
+                throw error;
+            } else {
+                //console.log(respuesta[0].Persona_Grupoid);
+                res.render('grupos', { respuesta: respuesta })
+            }
+        })
+
+    } else {
+        console.log('NO hay sesion activa Login')
+        res.render('login', {
+            login: false,
+            name: 'Inicie Sesion'
+        })
+    }
+
+
+})
+//Participantes del grupo
+app.post('/grupos', (req, res) => {
+    if (req.session.loggedin) {
+        console.log('Sesion existente')
+        var idGrupo = req.body.codigo;
+        console.log('codigo obtenido:' + idGrupo)
+        var query = String("select idUsuario as 'idUsuario', idPersona as 'idPersona', Usuario as 'nombre', email as 'email', meta_agua as 'meta_agua', CGrupos_idCGrupos as 'idGrupo', Nombre_Grupo as 'Nombre_Grupo' from USuario u inner join persona p on u.idUsuario = p.Usuario_idUsuario inner join persona_has_cgrupos pg on p.idPersona = pg.persona_idPersona inner join cgrupos g on pg.CGrupos_idCGrupos = g.idCGrupos where g.idCGrupos = ?;")
+        connection.query(query, [idGrupo], (error, respuesta) => {
+            if (error) {
+                console.log("errror al seleccionar" + error);
+                throw error;
+            } else {
+                //console.log(respuesta[0].Persona_Grupoid);
+                var codigo = respuesta[0].idGrupo;
+                var nombreGrupo = respuesta[0].Nombre_Grupo
+                res.render('grupos1', { respuesta: respuesta, codigo, nombreGrupo })
+            }
+        })
+    } else {
+        console.log('NO hay sesion activa Login')
+        res.render('login', {
+            login: false,
+            name: 'Inicie Sesion'
+        })
+    }
+
+})
+
+
+
+
+//crear un grupo
+
+//Back
+app.post('/crearGrupo1', (req, res) => {
+    //crear un grupo
+    var nombreGrupo = req.body.nombreGrupo;
+
+    //este id se obtiene de la sesion
+    var idPersona = req.session.idPersona;
+    var idCgrupo = null;
+
+    //insertar en grupos
+    connection.query('INSERT INTO cgrupos SET ?', { idCgrupos: idCgrupo, Nombre_Grupo: nombreGrupo, estadoGrupo: 0, persona_idpersona: idPersona }, async (error, results) => {
+        if (error) {
+            console.log(error);
+        } else {
+
+            //obtener el codigo generado
+            connection.query("SELECT LAST_INSERT_ID() as 'idCgrupos' ", (error, respuesta, field) => {
+                console.log("el identificador del grupo es : " + respuesta[0].idCgrupos)
+                var codigo = respuesta[0].idCgrupos;
+
+                //relacionar la persona con el grupo en
+
+                connection.query('INSERT INTO persona_has_CGrupos SET ?', { Persona_Grupoid: null, persona_idPersona: idPersona, CGrupos_idCGrupos: codigo }, async (error, results) => {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Usuario y grupo conectados con exito')
+                        // res.redirect('/login')
+                    }
+
+                })
+
+
+            })
+
+            res.redirect('/grupo')
+            console.log('grupo Registrado con exito')
+        }
+
+    })
+
+})
+
+
+//unirse a un grupo 
+//pagina temporal (se supone que esto tiene que ser un modal)
+
+
+app.post('/unirseGrupo1', (req, res) => {
+    //codigo con el q se une
+    var codigo = req.body.codigo;
+
+    //obtener esta id de la sesion 
+    var idPersona = req.session.idPersona;
+    connection.query('INSERT INTO persona_has_CGrupos SET ?', { Persona_Grupoid: null, persona_idPersona: idPersona, CGrupos_idCGrupos: codigo }, async (error, results) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Usuario y grupo relacionados con exito')
+            res.redirect('/grupo')
+        }
+
+    })
+
+})
+//
 
 
 //DEPLOY EN EL PUERTO

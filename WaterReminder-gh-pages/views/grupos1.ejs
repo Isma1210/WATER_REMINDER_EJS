@@ -20,14 +20,32 @@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" >
 
-    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+        <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
             <a href="home.html" class="navbar-brand"><img src="resources/assets/imgs/plantita.png" alt="" class="brand-img"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-           
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/regAgua">Registro&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Bebidas">Otras bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/configuracion">Configuración&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/grupo">Grupos&nbsp;</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 <header id="home" class="header">
@@ -41,30 +59,23 @@
 
                     <div class="taable-cell">
                         <div class="codigo">
-                            <label >Código</label>
+                            <label >Codigo: <%=codigo%></label>
                         </div>
-                        <h3 class="le" align="center"><font color="#F2D049">Nombre del grupo </font></h3> <br>
+                        <h3 class="le" align="center"><font color="#F2D049"><%=nombreGrupo%></font></h3> <br>
                             <br>
-                            
+
+                            <% var i = 0
+                            respuesta.forEach((user)=>{
+                                i+=1
+                                %>
                             <div class="participantes">
-                            <img src="resources/assets/imgs/medalla1.png" alt="">
-                            <label> Usuario 1 Cant. consumida</label>
+                            <img src="resources/assets/imgs/medalla<%=i%>.png" alt="">
+                            <label><%=user.nombre%>  </label>
+                            <label>  meta: <%=user.meta_agua%></label>
                             </div>
-                            <div class="participantes">
-                            <img src="resources/assets/imgs/medalla2.png" alt="">
-                            <label> Usuario 2 Cant. consumida</label></div>
-                            <div class="participantes">
-                                <img src="resources/assets/imgs/medalla3.png" alt="">
-                            <label> Usuario 3 Cant. consumida</label>
-                            </div>
-                            <div class="participantes">
-                                <img src="resources/assets/imgs/medalla4.png" alt="">
-                            <label> Usuario 4 Cant. consumida</label></div>
-                            <div class="participantes">
-                                <img src="resources/assets/imgs/medalla5.png" alt="">
-                            <label> Usuario 5 Cant. consumida</label>
+                            <%})%>
                             
-                           </div>
+
                            <button button class="btn btn-primary2" onClick="">Borrar</button>
                                 <a href="/grupo"><button class="btn btn-primary3" onClick="">Regresar</button></a>
                              </div>   

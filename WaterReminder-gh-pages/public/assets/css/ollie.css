@@ -267,7 +267,9 @@ button,
 input {
   border-radius: 15px;
   border: 1px white solid;
-  overflow: visible;
+  overflow: visible;  
+  padding: 5px;
+  padding-left: 8px;
 }
 
 button,
@@ -11105,6 +11107,11 @@ a.text-dark:hover, a.text-dark:focus {
 .infos .socials .subtitle {
   font-size: 14px;
   opacity: .9;
+  
+}
+.fondo{
+  margin-top: -3rem;
+  margin-right: 1rem;
 }
 
 .infos .title .font-small {
@@ -11851,7 +11858,9 @@ pre .code {
     margin-top: 20px;
   }
 }
-
+#animacion{
+  margin-left: 40%;
+}
 @media (max-width: 767.98px) {
   .header .carousel-control-prev,
   .header .carousel-control-next {
@@ -11873,7 +11882,6 @@ pre .code {
 
 .section:nth-child(odd) {
   background-image: url('fondo.jpg');
-  opacity: 0.8;
 }
 
 .section.p-sm {
@@ -12183,4 +12191,14 @@ color:#222;
   padding-top: 10px;
   margin: 15px;
   border-radius: 10px;
+}
+
+.tabla{
+  background-color: #efefef;
+  color: #000;
+}
+tr, td {
+  border: 3px solid #6eb8f5;
+  padding-left: 15px;
+  border-radius: 15px;
 }

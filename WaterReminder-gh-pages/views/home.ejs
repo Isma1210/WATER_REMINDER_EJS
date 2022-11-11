@@ -57,12 +57,14 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1 align="center"><font color="#F2D049">Objetivo de agua de </font></h1>
-                            <h1 align="center">1200mL</h1>
+                            <!-- <h1 align="center"><font color="#F2D049">Objetivo de agua de </font></h1>
+                            <h1 align="center">1200mL</h1> -->
+                            <h1 align="center"><font color="#F2D049">Bienvenido de nuevo</font></h1>
+                            <h1 align="center"><%= nombre %></h1>
                             <br>
                             <div id="animacion">
-                                <img src="resources/agua.gif" class="border" height="200px" width="200px"> 
-                            </div>
+                                <img src="resources/agua.gif"  height="200px" width="200px"> 
+                            </div><br>
                             <div class="regAgua">
                                 <form name="confirmarconsumo" action="/addWater" method="post">
                                     <h3 align="center">
@@ -83,14 +85,14 @@
                             </div>
                             <br>
 							<form name="registrodiario" action="/"><center>
-						        <table width="600" border="1">
+						        <table class="tabla" width="900" >
                                     <tbody>
                                         <% consumoUser.forEach((user)=>{%> 
                                         <tr>
-                                            <td><h2><img src="resources/agua.gif" class="border" height="70px" width="70px"></h2><br><br>&nbsp;</td>
+                                            <td><img src="resources/agua.gif"  height="70px" width="70px"></td>
                                             <td><%= user.Consumo_Total %></td>
-                                            <!-- <td><%= user.Fecha %></td> ACTIVAR HASTA QUE SE CORRIJAN LOS ESTILOS DE LA TABLA--> 
-                                            <td><a href="/delWater/<%= user.idConsumo_Agua %>">X</a></td>
+                                            <td><%= user.Fecha %></td>
+                                            <td><a href="/delWater/<%= user.idConsumo_Agua %>"> <img src="resources/basura.png" style="height: 40px; width:40px;"> </a></td>
                                         </tr>
                                         <%})%>
                                     </tbody>
