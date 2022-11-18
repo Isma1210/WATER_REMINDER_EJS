@@ -1,0 +1,1559 @@
+class="btn btn-primary btn-rounded"
+id="boton" 
+
+
+
+.btn-primary {
+  font-size: 14px;
+  border-radius: 17px;
+  color: #fff;
+  background-color: #91c470;
+  border-color: #91c470;
+}
+.btn-rounded {
+  border-radius: 100px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.1rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+ position: relative;
+  width: 50%;
+ display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gallery">
+     
+      
+    <div class="thumbnail">
+     <li class="refrescos"> <h2> 7up</h2> 
+      <a href="#"><img src="imgs/sevenup.webp" alt="" width="2000" class="cards"/></a>
+     <br>
+     <br>
+      <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+  
+    <br>
+      <table id="customers"  style="overflow-x:auto;">
+        <tr>
+           <th>Agua</th>
+           <th>Calorias</th>
+           <th>Azucar</th>
+         </tr>
+        <tr>
+           <td >180 mL</td>
+           <td>80 cal</td>
+           <td>20 g</td>
+        </tr>
+          </table>
+  
+  
+      <form method="post" action="ConsumoOtrasBebidas1">
+      <p><center><input type="submit" value="Ingresar" class="button" ></center>    
+        <div class="caja">
+          <select name="cantidad">
+            <option disabled selected="">seleccione la cantidad de ml</option>
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+            <option>500</option>
+            <option>600</option>
+            <option>700</option>
+            <option>800</option>
+            <option>900</option>
+            <option>1000</option>
+            <option>1200</option>
+            <option>1400</option>
+            <option>1500</option>
+            <option>1600</option>
+            <option>1800</option>
+            <option>1900</option>
+            <option>2000</option>
+            <option>2100</option>
+        </select>
+      </div>
+      </form>      
+    </li>
+  
+  </div>
+      <div class="thumbnail"> 
+        <li class="refrescos"> <h2> Aurrera Manzana</h2> 
+        <a href="#"><img src="imgs/Aurrera.jpg" alt="" width="2000" class="cards"/></a>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>185 mL</td>
+             <td>16cal</td>
+             <td>4g</td>
+          </tr>
+            </table>
+  
+        
+       
+          <form method="post" action="ConsumoOtrasBebidas2">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+      </li>
+      </div>
+      <div class="thumbnail">
+         
+        <li class="refrescos"> <h2> Big Fresh</h2> 
+         <a href="#"><img src="imgs/big fresh.webp" alt="" width="2000" class="cards"/></a>
+        <br>
+        <br>
+         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+     
+       <br>
+         <table id="customers">
+           <tr>
+              <th>Agua</th>
+              <th>Calorias</th>
+              <th>Azucar</th>
+            </tr>
+           <tr>
+              <td>180 mL</td>
+              <td>32cal</td>
+              <td>8g</td>
+           </tr>
+             </table>
+          <form method="post" action="ConsumoOtrasBebidas3"></form>
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        
+      </li>
+      </div>
+      <div class="thumbnail">
+        <li class="refrescos"> <h2> Canada Dry</h2> 
+        <a href="#"><img src="imgs/canada fry.jfif" alt="" width="2000" class="cards"/></a>
+       <br>
+       <br>
+       <p>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>176 mL</td>
+             <td>68cal</td>
+             <td>17g</td>
+          </tr>
+            </table>
+  
+       
+          <form method="post" action="ConsumoOtrasBebidas4">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+      </div>
+    </li>
+    </div>
+    <div class="gallery">
+      <div class="thumbnail"> 
+        <li class="refrescos"> <h2> Coca Cola</h2> 
+        <img src="imgs/coca colaa.jpg" alt="" width="2000" class="cards"/></a>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>170 mL</td>
+             <td>84 cal</td>
+             <td>21 g</td>
+          </tr>
+            </table>
+        
+        
+       
+       
+          <form method="post" action="ConsumoOtrasBebidas5">
+         <center> <input type="button" value="Ingresar" class="button"></center>
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+      <div class="thumbnail"> 
+        
+        <li class="refrescos">  <h2>  Crush</h2> 
+        <img src="imgs/crush.webp" alt="" width="2000" class="cards"/></a>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>180 mL</td>
+             <td>32cal</td>
+             <td>8g</td>
+          </tr>
+            </table>
+        
+    
+       
+          <form method="post" action="ConsumoOtrasBebidas6">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+      <div class="thumbnail"> 
+        
+        <li class="refrescos">   <h2> Dot</h2> 
+        <img src="imgs/dot.jpg" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>180 mL</td>
+             <td>56cal</td>
+             <td>14g</td>
+          </tr>
+            </table>
+  
+  
+  
+  
+        
+        
+       
+          <form method="post" action="ConsumoOtrasBebidas7">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+      <div class="thumbnail"> 
+        <li class="refrescos">  <h2> dr.Pepper</h2> 
+        <img src="imgs/dr pepper.jfif" alt="" width="2000" class="cards">
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>176 mL</td>
+             <td>80 cal</td>
+             <td>20 g</td>
+          </tr>
+        </table>
+        
+          <form method="post" action="ConsumoOtrasBebidas8">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+         <div class="thumbnail">
+          <li class="refrescos"> <h2> Fanta</h2> 
+          <img src="imgs/Fanta.jpg" alt="" width="2000" class="cards"/>
+         <br>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>180 mL</td>
+               <td>92cal</td>
+               <td>23 g</td>
+            </tr>
+              </table>
+  
+   
+       
+          <form method="post" action="ConsumoOtrasBebidas9">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail">
+          <li class="refrescos">   <h2> Fresca
+          </h2> 
+          <img src="imgs/fresca.webp" alt="" width="2000" class="cards"/>
+         <br>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>176 mL</td>
+               <td>80 cal</td>
+               <td>20 g</td>
+            </tr>
+              </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas10">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail"> 
+          <li class="refrescos">  <h2>Jarritos</h2> 
+         <img src="imgs/jarritos.webp" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>181 mL</td>
+             <td>80 cal</td>
+             <td>20 g</td>
+          </tr>
+            </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas11">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail"> 
+          <li class="refrescos">  <h2> Lift</h2> 
+          <img src="imgs/lift.webp" alt="" width="2000" class="cards"/>
+         <br>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>176 mL</td>
+               <td>80 cal</td>
+               <td>20 g</td>
+            </tr>
+              </table>
+    
+          <form method="post" action="ConsumoOtrasBebidas12">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+    
+      </div>
+         <div class="thumbnail">
+          <li class="refrescos">   <h2> Lulu</h2> 
+          <img src="imgs/lulu.webp" alt="" width="2000" class="cards"/>
+         <br>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>170 mL</td>
+               <td>40 cal</td>
+               <td>10 g</td>
+            </tr>
+              </table>
+    
+          <form method="post" action="ConsumoOtrasBebidas13">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail"> 
+          <li class="refrescos">     <h2> Manzanita sol</h2> 
+          <img src="imgs/manzanita sol.jpg" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>180 mL</td>
+             <td>84 cal</td>
+             <td>21 g</td>
+          </tr>
+            </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas14">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail"> 
+          <li class="refrescos">   <h2> Mirinda</h2> 
+          <img src="imgs/mirinda.jpg" alt="" width="2000" class="cards"/>
+         <br>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>181 mL</td>
+               <td>100cal</td>
+               <td>25 g</td>
+            </tr>
+              </table>
+    
+          <form method="post" action="ConsumoOtrasBebidas15">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail"> 
+          <li class="refrescos">    <h2> Orange Crush</h2> 
+          <img src="imgs/orange crush.jpg" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>183 mL</td>
+             <td>28cal</td>
+             <td>7g</td>
+          </tr>
+            </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas16">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+    </div>
+    <div class="gallery">
+   
+    <div class="thumbnail"> 
+      <li class="refrescos">    <h2> Pepsi</h2> 
+      <img src="imgs/pepsi.jpg" alt="" width="2000" class="cards"/>
+     <br>
+     <br>
+      <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+  
+    <br>
+      <table id="customers">
+        <tr>
+           <th>Agua</th>
+           <th>Calorias</th>
+           <th>Azucar</th>
+         </tr>
+        <tr>
+           <td>170 mL</td>
+           <td>92cal</td>
+           <td>23 g</td>
+        </tr>
+          </table>
+  
+      <form method="post" action="ConsumoOtrasBebidas17">
+      <p><center><input type="submit" value="Ingresar" class="button" ></center>    
+        <div class="caja">
+          <select name="cantidad">
+            <option disabled selected="">seleccione la cantidad de ml</option>
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+            <option>500</option>
+            <option>600</option>
+            <option>700</option>
+            <option>800</option>
+            <option>900</option>
+            <option>1000</option>
+            <option>1200</option>
+            <option>1400</option>
+            <option>1500</option>
+            <option>1600</option>
+            <option>1800</option>
+            <option>1900</option>
+            <option>2000</option>
+            <option>2100</option>
+        </select>
+      </div>
+      </form>      
+  
+      </li>
+  </div>
+      <div class="thumbnail">
+        <li class="refrescos">  <h2> Red Cola</h2> 
+        <img src="imgs/redcola.png" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>176 mL</td>
+             <td>88cal</td>
+             <td>22 g</td>
+          </tr>
+            </table>
+  
+      
+          <form method="post" action="ConsumoOtrasBebidas18">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+      <div class="thumbnail"> 
+        <li class="refrescos">  <h2> Jarochito</h2> 
+        <<img src="imgs/rochito.jpg" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>180 mL</td>
+             <td>80 cal</td>
+             <td>20 g</td>
+          </tr>
+            </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas19"></form>
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+        
+      </div>
+      <div class="thumbnail"> 
+        <li class="refrescos">   <h2> Selecto Refresco</h2> 
+        <img src="imgs/selectorefresco.png" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>181 mL</td>
+             <td>88 cal</td>
+             <td>22 g</td>
+          </tr>
+            </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas20">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+          </form>
+        </li>
+      </div>
+   
+    </div>
+    <div class="gallery">
+      <div class="thumbnail"> 
+        <li class="refrescos">  <h2> Sidral Mundet</h2> 
+        <img src="imgs/sidralmundet.png" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>180 mL</td>
+             <td>80 cal</td>
+             <td>20 g</td>
+          </tr>
+            </table>
+  
+       
+          <form method="post" action="ConsumoOtrasBebidas21">
+         <center> <input type="button" value="Ingresar" class="button"></center>
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+      <div class="thumbnail"> 
+        <li class="refrescos"> <h2> Sangria señoral</h2> 
+        <img src="imgs/sngriseñorial.png" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>180 mL</td>
+             <td>100 cal</td>
+             <td>25 g</td>
+          </tr>
+            </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas22">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+      <div class="thumbnail">
+        
+        <li class="refrescos"> <h2> Soriana Naranja</h2> 
+        <img src="imgs/soriananaranja.png" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>180 mL</td>
+             <td>76cal</td>
+             <td>18 g</td>
+          </tr>
+            </table>
+  
+  
+          <form method="post" action="ConsumoOtrasBebidas23">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+      <div class="thumbnail"> 
+        <li class="refrescos">  <h2> Sprite</h2> 
+        <img src="imgs/sprite.png" alt="" width="2000" class="cards"/>
+       <br>
+       <br>
+        <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+    
+      <br>
+        <table id="customers">
+          <tr>
+             <th>Agua</th>
+             <th>Calorias</th>
+             <th>Azucar</th>
+           </tr>
+          <tr>
+             <td>176 mL</td>
+             <td>80 cal</td>
+             <td>22 g</td>
+          </tr>
+            </table>
+  
+          <form method="post" action="ConsumoOtrasBebidas24">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+        </li>
+      </div>
+         <div class="thumbnail">
+          <li class="refrescos">   <h2> Toni</h2> 
+          <img src="imgs/toni.png" alt="" width="2000" class="cards"/>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>176 mL</td>
+               <td>80 cal</td>
+               <td>20 g</td>
+            </tr>
+              </table>
+    
+          <form method="post" action="ConsumoOtrasBebidas25">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail"> 
+          <li class="refrescos">  <h2> Squirt</h2> 
+          <img src="imgs/squirt.png" alt="" width="2000" class="cards"/>
+         <br>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>180 mL</td>
+               <td>88 cal</td>
+               <td>22 g</td>
+            </tr>
+              </table>
+    
+          <form method="post" action="ConsumoOtrasBebidas26">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+         <div class="thumbnail"> 
+          <li class="refrescos">     <h2>Yoli</h2> 
+          <img src="imgs/yoli.webp" alt="" width="2000" class="cards"/>
+         <br>
+         <br>
+          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
+      
+        <br>
+          <table id="customers">
+            <tr>
+               <th>Agua</th>
+               <th>Calorias</th>
+               <th>Azucar</th>
+             </tr>
+            <tr>
+               <td>180 mL</td>
+               <td>84 cal</td>
+               <td>21 g</td>
+            </tr>
+              </table>
+    
+          <form method="post" action="ConsumoOtrasBebidas27">
+          <input type="button" value="Ingresar" class="button">
+          <div class="caja">
+            <select name="cantidad">
+              <option disabled selected="">seleccione la cantidad de ml</option>
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>1000</option>
+              <option>1200</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1800</option>
+              <option>1900</option>
+              <option>2000</option>
+              <option>2100</option>
+          </select>
+          </div>
+        </form>
+          </li>
+      </div>
+      
+
+
+
+
+
+<!-- HTML !-->
+<button class="button-49" role="button">Button 49</button>
+
+/* CSS */
+.button-49,
+.button-49:after {
+  width: 150px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-49:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'ALTERNATE TEXT';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button-49,
+  .button-49:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+
+
+
+https://getcssscan.com/css-buttons-examples
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

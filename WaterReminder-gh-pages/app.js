@@ -85,10 +85,30 @@ app.get('/login',(req,res)=>{
 //HOME--CONFIRMAR CONSUMO DE AGUA Y TABLA DE CONSUMO
 app.get('/home',(req,res)=>{
     if(req.session.loggedin){
+        //BACK CONSUMO DE AGUA IDEAL
+        connection.query(' SELECT peso,altura,edad,Actividad_fisica FROM persona WHERE idPersona="'+req.session.idPersona+'"',(error,results)=>{
+            if(error)throw error;
+            req.session.peso=results[0].peso
+            req.session.altura=results[0].altura
+            req.session.Actividad_fisica=results[0].Actividad_fisica
+        })
+
+        const consumoIdeal2=parseFloat(req.session.peso)+parseFloat(req.session.altura)+parseFloat(req.session.Actividad_fisica)
+        const consumoIdeal=66+(13.7*parseFloat(req.session.peso))+(5*parseFloat(req.session.altura))-(6.5*20)
+        console.log(`Debes tomar ${consumoIdeal}`)
+
+
+        //BACK DE CONSUMO DE AGUA TOTAL
+        connection.query('SELECT SUM(Consumo_Total) FROM consumo_agua WHERE Persona_idPersona ="'+req.session.idPersona+'"',(error,results)=>{
+            if(error)throw error;
+            req.session.consumoTotal=results[0]
+        })
+
+
         console.log('Sesion creada y existente-HOME')
         connection.query('SELECT * FROM consumo_agua WHERE Persona_idPersona="'+req.session.idPersona+'"',(error,results)=>{
             if(error)throw error;
-            res.render('home',{consumoUser:results,nombre:req.session.nombre})
+            res.render('home',{consumoUser:results,nombre:req.session.nombre,tuAgua:consumoIdeal,totalAgua:req.session.consumoTotal})
         })
     }else{
         console.log('NO hay sesion activa-Login')
@@ -230,8 +250,13 @@ app.post('/auth',async(req,res)=>{
         connection.query('SELECT idPersona, idUsuario FROM persona INNER JOIN usuario ON persona.Usuario_idUsuario=usuario.idUsuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
             console.log(`EL id de quien ingreso es: ${respuesta[0].idPersona}`)
             req.session.idPersona=respuesta[0].idPersona; //Guardando Id de persona en la sesion
-            //req.session.idUsuario = respuesta[0].idUsuario;
         })
+
+        connection.query('SELECT idUsuario FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
+            console.log(`EL idUsuario es : ${respuesta[0].idUsuario}`)
+            req.session.idUsuario=respuesta[0].idUsuario; //Guardando Id de persona en la sesion
+        })
+
 
         connection.query('SELECT email FROM usuario WHERE email="'+Usuario+'"',(error,respuesta,field)=>{
             if(respuesta[0].email===Usuario){
