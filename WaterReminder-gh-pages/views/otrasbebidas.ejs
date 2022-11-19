@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>  Refrescos </title>
     <!--Styelsheet-->
-    <link href="css1/cssotra.css" rel="stylesheet" type="text/css">
-    <link href="css1/cssotra2.css" rel="stylesheet" type="text/css">
+    <link href="resources/css1/cssotra.css" rel="stylesheet">
+    <link href="resources/css1/cssotra2.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- owl carousel -->
     <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.css">
@@ -16,18 +16,18 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 
-<body background="imgs/Fondo.png">
+<body background="resources/imgs/Fondo.png">
 <!--Contenedor inicial-->
  <div class="container">
 <!--Navbar-->
 <ul class="topnav">
   <li ><a href="Refrescos.html"> <div class="logo-image">
-    <img src="assets/imgs/logo.svg" class="img-fluid">
+    <img src="resources/assets/imgs/logo.svg" class="img-fluid">
 </div></a></li>
-  <li class="right"><a  href="Refrescos.html" >Configuraciones</a></li>
-  <li class="right"><a href="#news" class="active">Otras Bebidas</a></li>
-  <li class="right"><a href="#contact">Registro</a></li>
-  <li class="right"><a href="#about">Home</a></li>
+  <li class="right"><a  href="Refrescos.html">Configuraciones</a></li>
+  <li class="right"><a href="/alcoholes" class="active">Otras Bebidas</a></li>
+  <li class="right"><a href="/jugos">Registro</a></li>
+  <li class="right"><a href="/bebidasener">Home</a></li>
 </ul>
 
   <section class="intro">
@@ -36,10 +36,10 @@
   <!--Barra de busqueda y Bebidas-->
   <input type="text" id="myInput" onkeyup=" search_refresco() " placeholder="Search for names..">
   <center>
-    <Button type="button" value="Refrescos" class="button-17" ><a href="Refrescos.html">Refrescos</a></Button>
-   <Button type="button" value="Bebidas Alcoholicas" class="button-17"><a href="Alcholes.html">Alcoholes</a></Button>
-   <Button type="button" value="Jugos" class="button-17"><a href="Jugos.html">Jugos</a></Button>
-   <button type="button" value="Bebidas Energeticas" class="button-17"><a href="Bebidas energeticas.html">Energeticas</a></button>
+    <Button type="button" value="Refrescos" class="button-17" ><a href="/Bebidas">Refrescos</a></Button>
+   <Button type="button" value="Bebidas Alcoholicas" class="button-17"><a href="/Bebidas2">Alcoholes</a></Button>
+   <Button type="button" value="Jugos" class="button-17"><a href="/Bebidas3">Jugos</a></Button>
+   <button type="button" value="Bebidas Energeticas" class="button-17"><a href="/Bebidas4">Energeticas</a></button>
   </center>
 
 
@@ -50,7 +50,7 @@
       
     <div class="thumbnail">
      <li class="refrescos"> <h2> 7up</h2> 
-      <a href="#"><img src="imgs/7uppp.jpg" alt="" width="2000" class="cards"/></a>
+      <a href="#"><img src="resources/imgs/7up.jpg" alt="" width="2000" class="cards"/></a>
      <br>
      <br>
       <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -75,24 +75,24 @@
         <div class="caja">
           <select name="cantidad">
             <option disabled selected="">seleccione la cantidad de ml</option>
-            <option>100</option>
-            <option>200</option>
-            <option>300</option>
-            <option>400</option>
-            <option>500</option>
-            <option>600</option>
-            <option>700</option>
-            <option>800</option>
-            <option>900</option>
-            <option>1000</option>
-            <option>1200</option>
-            <option>1400</option>
-            <option>1500</option>
-            <option>1600</option>
-            <option>1800</option>
-            <option>1900</option>
-            <option>2000</option>
-            <option>2100</option>
+            <option values="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+            <option value="1200">1200</option>
+            <option value="1400">1400</option>
+            <option value="1500">1500</option>
+            <option value="1600">1600</option>
+            <option value="1800">1800</option>
+            <option value="1900">1900</option>
+            <option value="2000">2000</option>
+            <option value="2100">2100</option>
         </select>
       </div>
       </form>      
@@ -101,7 +101,7 @@
   </div>
       <div class="thumbnail"> 
         <li class="refrescos"> <h2> Aurrera Manzana</h2> 
-        <a href="#"><img src="imgs/Aurrera.jpg" alt="" width="2000" class="cards"/></a>
+        <a href="#"><img src="resources/imgs/Aurrera.jpg" alt="" width="2000" class="cards"/></a>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -127,24 +127,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -153,7 +153,7 @@
       <div class="thumbnail">
          
         <li class="refrescos"> <h2> Big Fresh</h2> 
-         <a href="#"><img src="imgs/big fresh.webp" alt="" width="2000" class="cards"/></a>
+         <a href="#"><img src="resources/imgs/big fresh.webp" alt="" width="2000" class="cards"/></a>
         <br>
         <br>
          <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -176,24 +176,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -204,8 +204,8 @@
     <div class="gallery">
       
       <div class="thumbnail"> 
-        <li class="refrescos"> <h2> Coca Cola</h2> 
-        <img src="imgs/coca colaa.jpg" alt="" width="2000" class="cards"/></a>
+        <li class="refrescos"> <h2> Coca-Cola</h2> 
+        <img src="resources/imgs/coca colaa.jpg" alt="" width="2000" class="cards"/></a>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -232,24 +232,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -258,7 +258,7 @@
       <div class="thumbnail"> 
         
         <li class="refrescos">  <h2>  Crush</h2> 
-        <img src="imgs/crush.webp" alt="" width="2000" class="cards"/></a>
+        <img src="resources/imgs/crush.webp" alt="" width="2000" class="cards"/></a>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -284,24 +284,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -310,7 +310,7 @@
       <div class="thumbnail"> 
         
         <li class="refrescos">   <h2> Dot</h2> 
-        <img src="imgs/dot.jpg" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/dot.jpg" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -340,24 +340,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -365,7 +365,7 @@
       </div>
       <div class="thumbnail"> 
         <li class="refrescos">  <h2> dr.Pepper</h2> 
-        <img src="imgs/dr pepper.jfif" alt="" width="2000" class="cards">
+        <img src="resources/imgs/dr pepper.jfif" alt="" width="2000" class="cards">
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -389,24 +389,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -414,7 +414,7 @@
       </div>
          <div class="thumbnail">
           <li class="refrescos"> <h2> Fanta</h2> 
-          <img src="imgs/Fanta.jpg" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/Fanta.jpg" alt="" width="2000" class="cards"/>
          <br>
          <br>
           <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -440,24 +440,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -466,7 +466,7 @@
          <div class="thumbnail">
           <li class="refrescos">   <h2> Fresca
           </h2> 
-          <img src="imgs/fresca.webp" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/fresca.webp" alt="" width="2000" class="cards"/>
          <br>
          <br>
           <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -490,24 +490,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -515,7 +515,7 @@
       </div>
          <div class="thumbnail"> 
           <li class="refrescos">  <h2>Jarritos</h2> 
-         <img src="imgs/jarritos.webp" alt="" width="2000" class="cards"/>
+         <img src="resources/imgs/jarritos.webp" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -539,24 +539,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -564,7 +564,7 @@
       </div>
          <div class="thumbnail"> 
           <li class="refrescos">  <h2> Lift</h2> 
-          <img src="imgs/lift.webp" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/lift.webp" alt="" width="2000" class="cards"/>
          <br>
          <br>
           <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -588,24 +588,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -614,7 +614,7 @@
       </div>
          <div class="thumbnail">
           <li class="refrescos">   <h2> Lulu</h2> 
-          <img src="imgs/lulu.webp" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/lulu.webp" alt="" width="2000" class="cards"/>
          <br>
          <br>
           <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -638,24 +638,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -663,7 +663,7 @@
       </div>
          <div class="thumbnail"> 
           <li class="refrescos">     <h2> Manzanita sol</h2> 
-          <img src="imgs/manzanita sol.jpg" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/manzanita sol.jpg" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -687,32 +687,31 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
-          </select>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </div>
         </form>
           </li>
       </div>
          <div class="thumbnail"> 
           <li class="refrescos">   <h2> Mirinda</h2> 
-          <img src="imgs/mirinda.jpg" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/mirinda.jpg" alt="" width="2000" class="cards"/>
          <br>
          <br>
           <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -736,24 +735,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -761,7 +760,7 @@
       </div>
          <div class="thumbnail"> 
           <li class="refrescos">    <h2> Orange Crush</h2> 
-          <img src="imgs/orange crush.jpg" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/orange crush.jpg" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -785,24 +784,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -813,7 +812,7 @@
    
     <div class="thumbnail"> 
       <li class="refrescos">    <h2> Pepsi</h2> 
-      <img src="imgs/pepsi.jpg" alt="" width="2000" class="cards"/>
+      <img src="resources/imgs/pepsi.jpg" alt="" width="2000" class="cards"/>
      <br>
      <br>
       <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -837,24 +836,24 @@
         <div class="caja">
           <select name="cantidad">
             <option disabled selected="">seleccione la cantidad de ml</option>
-            <option>100</option>
-            <option>200</option>
-            <option>300</option>
-            <option>400</option>
-            <option>500</option>
-            <option>600</option>
-            <option>700</option>
-            <option>800</option>
-            <option>900</option>
-            <option>1000</option>
-            <option>1200</option>
-            <option>1400</option>
-            <option>1500</option>
-            <option>1600</option>
-            <option>1800</option>
-            <option>1900</option>
-            <option>2000</option>
-            <option>2100</option>
+            <option values="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+            <option value="1200">1200</option>
+            <option value="1400">1400</option>
+            <option value="1500">1500</option>
+            <option value="1600">1600</option>
+            <option value="1800">1800</option>
+            <option value="1900">1900</option>
+            <option value="2000">2000</option>
+            <option value="2100">2100</option>
         </select>
       </div>
       </form>      
@@ -863,7 +862,7 @@
   </div>
       <div class="thumbnail">
         <li class="refrescos">  <h2> Red Cola</h2> 
-        <img src="imgs/redcola.png" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/redcola.png" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -888,24 +887,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -913,7 +912,7 @@
       </div>
       <div class="thumbnail"> 
         <li class="refrescos">  <h2> Jarochito</h2> 
-        <<img src="imgs/rochito.jpg" alt="" width="2000" class="cards"/>
+        <<img src="resources/imgs/rochito.jpg" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -937,24 +936,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -963,7 +962,7 @@
       </div>
       <div class="thumbnail"> 
         <li class="refrescos">   <h2> Selecto Refresco</h2> 
-        <img src="imgs/selectorefresco.png" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/selectorefresco.png" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -987,24 +986,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
           </form>
@@ -1012,7 +1011,7 @@
       </div>
       <div class="thumbnail"> 
         <li class="refrescos">  <h2> Sidral Mundet</h2> 
-        <img src="imgs/sidralmundet.png" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/sidralmundet.png" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -1037,24 +1036,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -1062,7 +1061,7 @@
       </div>
       <div class="thumbnail"> 
         <li class="refrescos"> <h2> Sangria señoral</h2> 
-        <img src="imgs/sngriseñorial.png" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/sngriseñorial.png" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -1086,24 +1085,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -1112,7 +1111,7 @@
       <div class="thumbnail">
         
         <li class="refrescos"> <h2> Soriana Naranja</h2> 
-        <img src="imgs/soriananaranja.png" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/soriananaranja.png" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -1137,24 +1136,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -1162,7 +1161,7 @@
       </div>
       <div class="thumbnail"> 
         <li class="refrescos">  <h2> Sprite</h2> 
-        <img src="imgs/sprite.png" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/sprite.png" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -1186,24 +1185,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -1211,7 +1210,7 @@
       </div>
       <div class="thumbnail"> 
         <li class="refrescos">     <h2>Yoli</h2> 
-        <img src="imgs/yoli.webp" alt="" width="2000" class="cards"/>
+        <img src="resources/imgs/yoli.webp" alt="" width="2000" class="cards"/>
        <br>
        <br>
         <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -1235,24 +1234,24 @@
         <div class="caja">
           <select name="cantidad">
             <option disabled selected="">seleccione la cantidad de ml</option>
-            <option>100</option>
-            <option>200</option>
-            <option>300</option>
-            <option>400</option>
-            <option>500</option>
-            <option>600</option>
-            <option>700</option>
-            <option>800</option>
-            <option>900</option>
-            <option>1000</option>
-            <option>1200</option>
-            <option>1400</option>
-            <option>1500</option>
-            <option>1600</option>
-            <option>1800</option>
-            <option>1900</option>
-            <option>2000</option>
-            <option>2100</option>
+            <option values="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+            <option value="1200">1200</option>
+            <option value="1400">1400</option>
+            <option value="1500">1500</option>
+            <option value="1600">1600</option>
+            <option value="1800">1800</option>
+            <option value="1900">1900</option>
+            <option value="2000">2000</option>
+            <option value="2100">2100</option>
         </select>
         </div>
       </form>
@@ -1260,7 +1259,7 @@
     </div>
          <div class="thumbnail">
           <li class="refrescos">   <h2> Toni</h2> 
-          <img src="imgs/toni.png" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/toni.png" alt="" width="2000" class="cards"/>
          <br>
           <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
       
@@ -1283,24 +1282,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -1308,7 +1307,7 @@
       </div>
          <div class="thumbnail"> 
           <li class="refrescos">  <h2> Squirt</h2> 
-          <img src="imgs/squirt.png" alt="" width="2000" class="cards"/>
+          <img src="resources/imgs/squirt.png" alt="" width="2000" class="cards"/>
          <br>
          <br>
           <h3> Cantidad de agua, Calorias y Azucares de 200 mL</h3>
@@ -1332,24 +1331,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
         </form>
@@ -1357,7 +1356,7 @@
       </div>
       <div class="thumbnail">
         <li class="refrescos"> <h2> Canada Dry</h2> 
-        <a href="#"><img src="imgs/canada fry.jfif" alt="" width="2000" class="cards"/></a>
+        <a href="#"><img src="resources/imgs/canada fry.jfif" alt="" width="2000" class="cards"/></a>
        <br>
        <br>
        <p>
@@ -1383,24 +1382,24 @@
           <div class="caja">
             <select name="cantidad">
               <option disabled selected="">seleccione la cantidad de ml</option>
-              <option>100</option>
-              <option>200</option>
-              <option>300</option>
-              <option>400</option>
-              <option>500</option>
-              <option>600</option>
-              <option>700</option>
-              <option>800</option>
-              <option>900</option>
-              <option>1000</option>
-              <option>1200</option>
-              <option>1400</option>
-              <option>1500</option>
-              <option>1600</option>
-              <option>1800</option>
-              <option>1900</option>
-              <option>2000</option>
-              <option>2100</option>
+              <option values="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+              <option value="1000">1000</option>
+              <option value="1200">1200</option>
+              <option value="1400">1400</option>
+              <option value="1500">1500</option>
+              <option value="1600">1600</option>
+              <option value="1800">1800</option>
+              <option value="1900">1900</option>
+              <option value="2000">2000</option>
+              <option value="2100">2100</option>
           </select>
           </div>
       </div>
@@ -1413,7 +1412,7 @@
       
 </div>
 
-  <script src="js1/barra.js"></script>
+  <script src="resources/js1/barra.js"></script>
 
 </body>
 </html>

@@ -101,7 +101,7 @@ app.get('/home',(req,res)=>{
         //BACK DE CONSUMO DE AGUA TOTAL
         connection.query('SELECT SUM(Consumo_Total) FROM consumo_agua WHERE Persona_idPersona ="'+req.session.idPersona+'"',(error,results)=>{
             if(error)throw error;
-            req.session.consumoTotal=results[0]
+            req.session.consumoTotal=results[0].Consumo_Total
         })
 
 
@@ -132,11 +132,50 @@ app.get('/regAgua',(req,res)=>{
     }
     
 })
-//OTRAS BEBIDAS--
+//OTRAS BEBIDAS--REFRESCOS
 app.get('/Bebidas',(req,res)=>{
     if(req.session.loggedin){
         console.log('Sesion creada y existente-otrasBebidas')
         res.render('otrasbebidas')
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
+})
+//OTRAS BEBIDAS--ALCOHOLES
+app.get('/Bebidas2',(req,res)=>{
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente-otrasBebidas')
+        res.render('alcoholes')
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
+})
+//OTRAS BEBIDAS--JUGOS
+app.get('/Bebidas3',(req,res)=>{
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente-otrasBebidas')
+        res.render('jugos')
+    }else{
+        console.log('NO hay sesion activa-Login')
+        res.render('login',{
+            login:false,
+            name:'Inicie Sesion'
+        })
+    }
+})
+//OTRAS BEBIDAS--ENERGETICAS
+app.get('/Bebidas4',(req,res)=>{
+    if(req.session.loggedin){
+        console.log('Sesion creada y existente-otrasBebidas')
+        res.render('bebidasener')
     }else{
         console.log('NO hay sesion activa-Login')
         res.render('login',{
